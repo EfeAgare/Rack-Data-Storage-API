@@ -6,6 +6,7 @@ class ServerTest < Minitest::Test
   include Rack::Test::Methods
 
   def app
+    $data = {}
     Server.new
   end
 
