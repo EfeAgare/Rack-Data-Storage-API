@@ -1,5 +1,4 @@
 require_relative './attributes'
-require 'pry'
 module Router
   class Registry
     attr_reader :routes
