@@ -1,6 +1,7 @@
 require 'digest'
 
 require_relative '../data/registry'
+require_relative './app_controller'
 
 class DataController < AppController
 
