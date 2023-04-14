@@ -24,16 +24,3 @@ class Server
   end
 end
 
-# This starts the server if the script is invoked from the command line. No
-# modifications needed here.
-if __FILE__ == $0
-  app = Rack::Builder.new do
-    # Define a global hash table to store the objects
-    $data = {}
-
-    use Rack::Reloader
-    run Server.new
-  end.to_app
-
-  Rack::Server.start(app: app, Port: 8282)
-end

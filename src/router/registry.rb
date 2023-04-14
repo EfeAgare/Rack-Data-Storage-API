@@ -1,5 +1,5 @@
 require_relative './attributes'
-
+require 'pry'
 module Router
   class Registry
     attr_reader :routes
@@ -59,6 +59,7 @@ module Router
     end
     
     ["get", "post", "put", "delete"].each do |method|
+
       define_method(method) do |path, to_controller|
         add method, path, to_controller
       end

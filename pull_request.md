@@ -1,81 +1,9 @@
-![example workflow](https://github.com/EfeAgare/Rack-Data-Storage-API/actions/workflows/test.yml/badge.svg)
+## What?
+Implementing a small HTTP service to store objects organized by repository
 
-# Data Storage API
+## Why?
 
-Implement a small HTTP service to store objects organized by repository.
-Clients of this service must implement the API below.
-
-## Recommendations
-
-* Your code will be read by humans, please take the time to optimize for that.
-* Add extra tests to test the functionality of your implementation.
-* The description of your submission should be used to describe your reasoning, your assumptions and the tradeoffs in your implementation.
-* If your chosen language allows for concurrency, remember that this is a web application and concurrent requests will come in.
-* Focus on getting a working solution and avoid external dependencies for data storage.
-
-## API
-
-### Upload an Object
-
-```
-PUT /data/{repository}
-```
-
-#### Response
-
-```
-Status: 201 Created
-{
-  "oid": "2845f5a412dbdfacf95193f296dd0f5b2a16920da5a7ffa4c5832f223b03de96",
-  "size": 1234
-}
-```
-
-### Download an Object
-
-```
-GET /data/{repository}/{objectID}
-```
-
-#### Response
-
-```
-Status: 200 OK
-{object data}
-```
-
-Objects that are not on the server will return a `404 Not Found`.
-
-### Delete an Object
-
-```
-DELETE /data/{repository}/{objectID}
-```
-
-#### Response
-
-```
-Status: 200 OK
-```
-
-## Getting started and Testing
-In server.rb you'll find a naive first draft of the answer to the exercise written for you. Please improve this draft so that it passes the test written in test.rb. You might need to install Rack:
-
-```ruby
-gem install rack rack-test
-```
-
-```
-To run the code
-
-rackup
-
-```
-You can test that this works by running:
-
-```ruby
-ruby test.rb
-```
+It helps identify objects by their content. Please take a look at README **General Requirements** for more information. 
 
 ## How?
 
@@ -106,3 +34,6 @@ The four methods get, post, put, and delete, each of which takes two arguments, 
   Delete an object
   Each controller should handle the appropriate HTTP method and use a data repository to store and retrieve objects. We can implement the data repository as an in-memory hash table, where each key is a repository name and the value is a hash table that maps object IDs to object data.
 
+
+## Testing?
+I've fixed the falling test and written more tests for the new HomeController and Route Class.
