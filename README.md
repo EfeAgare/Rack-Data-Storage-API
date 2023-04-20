@@ -5,14 +5,6 @@
 Implement a small HTTP service to store objects organized by repository.
 Clients of this service must implement the API below.
 
-## Recommendations
-
-* Your code will be read by humans, please take the time to optimize for that.
-* Add extra tests to test the functionality of your implementation.
-* The description of your submission should be used to describe your reasoning, your assumptions and the tradeoffs in your implementation.
-* If your chosen language allows for concurrency, remember that this is a web application and concurrent requests will come in.
-* Focus on getting a working solution and avoid external dependencies for data storage.
-
 ## API
 
 ### Upload an Object
@@ -59,7 +51,7 @@ Status: 200 OK
 ```
 
 ## Getting started and Testing
-In server.rb you'll find a naive first draft of the answer to the exercise written for you. Please improve this draft so that it passes the test written in test.rb. You might need to install Rack:
+ You might need to install Rack:
 
 ```ruby
 gem install rack rack-test
@@ -77,7 +69,7 @@ You can test that this works by running:
 ruby test.rb
 ```
 
-## How?
+## How is was written?
 
 - Define a data structure to store objects by repository; I used the ruby hash to store objects keyed by repository name. 
 - Create a DataStorage class which is responsible for storing the objects, finding the object, and deleting the object 
